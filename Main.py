@@ -15,7 +15,7 @@ menu = {
 
 #Define arrays for storing use data such as name
 nameArray=[] #This still might be useful to store seperatly
-ammountArray=[] #This isn't needed can append ammount info to order info as a whole
+ammountArray=[] #This isn't needed can append ammount info to order info as a whole?? Maybe a for loop idk
 sugarArray=[] #This isn't needed can append sugar info to order info as a whole
 #Might need to store total order price differently??
 order =[] 
@@ -27,7 +27,7 @@ def namefunction():
     time.sleep(1)
 namefunction()
 
-#Could I make the function repeat itself based on an amount of coffees wanted?? - ASK MISS UTTING
+#Could I make the function repeat itself based on an amount of coffees wanted?? - ASK MISS UTTING MAYBE A FOR LOOP????
 def orderfunction(): #15/3 changed to order function as will nest the ordering process within this function SOON™
     for option, coffee in menu.items():
         #Useing F-String ticks of an "advanced feature" on the work sheet
@@ -36,18 +36,19 @@ def orderfunction(): #15/3 changed to order function as will nest the ordering p
     coffeeInfo = input("Please enter the number of the Coffee you would like to order ")
     if coffeeInfo not in menu:
         print("This is not a listed coffee please try again")
-        time.sleep(3)
+        time.sleep(1)
         orderfunction()
         #exit() #Need to make this return
         #orderfunction()
     else:
         def sugarfunction():
-            Sugar = (input('How many servings of sugar would you like in your coffee? (Please enter a number) '))
+            Sugar = float(input('How many servings of sugar would you like in your coffee? (number between 0-10) ')) #Its saved as a float so should handle decimals okay
             if Sugar == 0:
                 print("No sugar added")
             else:
+                sugarArray.append(str("Sugar:"))
                 sugarArray.append(float(Sugar))
-                print(sugarArray)
+                #print(sugarArray)
                 order.append(sugarArray) 
         sugarfunction()
         print("ok debug man")
