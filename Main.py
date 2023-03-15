@@ -36,9 +36,16 @@ namefunction()
 
 def orderfunction(): #15/3 changed to order function as will nest the ordering process within this function SOON™
     for option, coffee in menu.items():
-        print(f"{option}. {coffee['type']} - ${coffee['cost']}")
+        #Useing F-String ticks of an "advanced feature" on the work sheet
+        print(f"{option}. {coffee['type']} | ${coffee['cost']}")
     #NEED TO HANDLE ORDER SELECTION IN HERE
-    coffeeType = input("Please enter the number of th Coffee you would like to order ")
+    coffeeInfo = input("Please enter the number of the Coffee you would like to order ")
+    if coffeeInfo != menu.items:
+        print("This is not a listed coffee please try again")
+        time.sleep(3)
+        exit()
+
+
     order.append({}) #How do I do this?
 orderfunction()    
 
