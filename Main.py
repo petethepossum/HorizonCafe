@@ -1,7 +1,6 @@
 import time
 debug = bool(False)
-
-
+#hasSugar = any
 
 #Don't think this is needed anymore not sure reading up on list, might change to a dictionary so can contain values etc
 
@@ -22,6 +21,7 @@ order =[]
 
 def namefunction():
     name = input('Enter your name for the order ')
+    nameArray.append(str("Customer Name:")) #Surely there is a better way to add this to the array?
     nameArray.append(str(name))
     print (name) #15/3 made it print the string not the array data giving a cleaner output
     time.sleep(1)
@@ -30,7 +30,7 @@ namefunction()
 #Could I make the function repeat itself based on an amount of coffees wanted?? - ASK MISS UTTING MAYBE A FOR LOOP????
 def orderfunction(): #15/3 changed to order function as will nest the ordering process within this function SOON™
     for option, coffee in menu.items():
-        #Useing F-String ticks of an "advanced feature" on the work sheet
+        #Using F-String ticks of an "advanced feature" on the work sheet
         print(f"{option}. {coffee['type']} | ${coffee['cost']}")
     #NEED TO HANDLE ORDER SELECTION IN HERE
     coffeeInfo = input("Please enter the number of the Coffee you would like to order ")
@@ -45,15 +45,24 @@ def orderfunction(): #15/3 changed to order function as will nest the ordering p
             Sugar = float(input('How many servings of sugar would you like in your coffee? (number between 0-10) ')) #Its saved as a float so should handle decimals okay
             if Sugar == 0:
                 print("No sugar added")
+                set: hasSugar = False
             else:
-                sugarArray.append(str("Sugar:"))
+                #sugarArray.append(str("Sugar:")) #Surely there is a better way to add this to the array?
                 sugarArray.append(float(Sugar))
                 #print(sugarArray)
                 order.append(sugarArray) 
-        sugarfunction()
+                set: hasSugar = True
+    
         print("ok debug man")
+        order.append(nameArray)
         order.append(coffee['type'])
-        print(order)
+        sugarfunction()
+        #print(order)
+        #print("Your order is: " + " " + str(coffee['type']) + " with " + str(sugarArray) + " sugar" + "for " + str(nameArray[1])) #This is a mess but works for now NEED TO FIX SUGAR
+        if hasSugar == bool(True):
+            print("Your order is: " + str(nameArray[1]) + " " + str(coffee['type']) + " with " + str(sugarArray) + " sugar") #This is a mess but works for now NEED TO FIX SUGAR AND BOOL HGANDELING
+        #else:
+            #print("Your order is: " + str(nameArray[1]) + " " + str(coffee['type']) + " with no sugar")
 
     order.append({}) #How do I do this?
 orderfunction()    
