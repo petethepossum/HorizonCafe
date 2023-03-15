@@ -41,6 +41,15 @@ def orderfunction(): #15/3 changed to order function as will nest the ordering p
         #exit() #Need to make this return
         #orderfunction()
     else:
+        def sugarfunction():
+            Sugar = (input('How many servings of sugar would you like in your coffee? (Please enter a number) '))
+            if Sugar == 0:
+                print("No sugar added")
+            else:
+                sugarArray.append(float(Sugar))
+                print(sugarArray)
+                order.append(sugar)
+        sugarfunction()
         print("ok debug man")
         order.append(coffee['type'])
         print(order)
