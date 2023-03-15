@@ -20,10 +20,11 @@ menu = {
 }
 
 #Define arrays for storing use data such as name
-nameArray=[]
-ammountArray=[]
-sugarArray=[]
-orderArray=[]
+nameArray=[] #This still might be useful to store seperatly
+ammountArray=[] #This isn't needed can append ammount info to order info as a whole
+sugarArray=[] #This isn't needed can append sugar info to order info as a whole
+#Might need to store total order price differently??
+order =[] 
 
 def namefunction():
     name = input('Enter your name for the order ')
@@ -34,12 +35,11 @@ namefunction()
 
 
 def orderfunction(): #15/3 changed to order function as will nest the ordering process within this function SOON™
-    #print("---Horizon Cafe Menu---")
-    #print("1. Flat White | $3.00\n2. Cappuccino | $3.00\n3. Latte | $3.50\n4. Decaf Coffee | $3.00\n5. Hot Chocolate | $4.00")
     for option, coffee in menu.items():
         print(f"{option}. {coffee['type']} - ${coffee['cost']}")
-    #Could I print the dictionary here instead of printing the menu in raw?
-    #print("---Please place your order below---")
+    #NEED TO HANDLE ORDER SELECTION IN HERE
+    coffeeType = input("Please enter the number of th Coffee you would like to order ")
+    order.append({}) #How do I do this?
 orderfunction()    
 
 
@@ -53,7 +53,7 @@ print(nameArray)
 print(ammountArray)
 
 
-#Sugar Input function (How can I change this to be better)
+#Sugar Input function (How can I change this to be better) should have it in the order selection function as an if statement?
 def sugarfunction():
     Sugar = (input('How many servings of sugar would you like in your drink? (Please enter a number) '))
     sugarArray.append(int(Sugar))
