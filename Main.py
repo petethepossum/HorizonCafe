@@ -48,7 +48,7 @@ def orderfunction(): #15/3 changed to order function as will nest the ordering p
             else:
                 sugarArray.append(float(Sugar))
                 print(sugarArray)
-                order.append(sugar)
+                order.append(sugarArray) 
         sugarfunction()
         print("ok debug man")
         order.append(coffee['type'])
@@ -70,12 +70,5 @@ def miscfunction():
 if debug == (True):
     miscfunction()
 
-#Sugar Input function (How can I change this to be better) should have it in the order selection function as an if statement?
-def sugarfunction():
-    Sugar = (input('How many servings of sugar would you like in your drink? (Please enter a number) '))
-    sugarArray.append(float(Sugar))
-    print(sugarArray)
-    #Calls function??
-sugarfunction()
 
 
