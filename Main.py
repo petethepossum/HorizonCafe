@@ -42,6 +42,8 @@ def orderfunction(): #15/3 changed to order function as will nest the ordering p
         #orderfunction()
     else:
         print("ok debug man")
+        order.append(coffee['type'])
+        print(order)
 
     order.append({}) #How do I do this?
 orderfunction()    
