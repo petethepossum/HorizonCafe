@@ -1,14 +1,8 @@
 import time
 debug = bool(False)
 
-#First thing to do is list coffe types and print them
 
-#Im going to use a single array list of friendly names here as it might make defining prices easier later on we will see I might be wrong
-cf1=['FlatWhite']
-cf2=['Cappuchino']
-cf3=['Latte']
-cf4=['Decaf']
-cf5=['Hot Chocolate']
+
 #Don't think this is needed anymore not sure reading up on list, might change to a dictionary so can contain values etc
 
 menu = {
@@ -33,7 +27,7 @@ def namefunction():
     time.sleep(1)
 namefunction()
 
-
+#Could I make the function repeat itself based on an amount of coffees wanted?? - ASK MISS UTTING
 def orderfunction(): #15/3 changed to order function as will nest the ordering process within this function SOON™
     for option, coffee in menu.items():
         #Useing F-String ticks of an "advanced feature" on the work sheet
@@ -43,7 +37,9 @@ def orderfunction(): #15/3 changed to order function as will nest the ordering p
     if coffeeInfo not in menu:
         print("This is not a listed coffee please try again")
         time.sleep(3)
-        exit()
+        orderfunction()
+        #exit() #Need to make this return
+        #orderfunction()
     else:
         print("ok debug man")
 
@@ -52,20 +48,21 @@ orderfunction()
 
 
 #Handle this before we show the menu as we can run order select twice
-
-ammount = input('how many coffees would you like? ')
-ammountArray.append(str(ammount))
-print(ammount)
-time.sleep(2)
-print("Print both arrays to check stored value ") #Need to make this relate to the debug var
-print(nameArray)
-print(ammountArray)
-
+def miscfunction():
+    ammount = input('how many coffees would you like? ')
+    ammountArray.append(str(ammount))
+    print(ammount)
+    time.sleep(2)
+    print("Print both arrays to check stored value ") #Need to make this relate to the debug var
+    print(nameArray)
+    print(ammountArray)
+if debug == (True):
+    miscfunction()
 
 #Sugar Input function (How can I change this to be better) should have it in the order selection function as an if statement?
 def sugarfunction():
     Sugar = (input('How many servings of sugar would you like in your drink? (Please enter a number) '))
-    sugarArray.append(int(Sugar))
+    sugarArray.append(float(Sugar))
     print(sugarArray)
     #Calls function??
 sugarfunction()
