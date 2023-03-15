@@ -9,7 +9,15 @@ cf2=['Cappuchino']
 cf3=['Latte']
 cf4=['Decaf']
 cf5=['Hot Chocolate']
-#Don't think this is needed anymore not sure reading up on list
+#Don't think this is needed anymore not sure reading up on list, might change to a dictionary so can contain values etc
+
+menu = {
+   "1": {"type": "Flat White", "cost": 3.00},
+   "2": {"type": "Cappuccino", "cost": 3.00},
+   "3": {"type": "Latte", "cost": 3.50},
+   "4": {"type": "Decaf", "cost": 3.00},
+   "5": {"type": "Hot Chocolate", "cost": 4.00}
+}
 
 #Define arrays for storing use data such as name
 nameArray=[]
@@ -28,6 +36,8 @@ namefunction()
 def menufunction():
     print("---Horizon Cafe Menu---")
     print("1. Flat White | $3.00\n2. Cappuccino | $3.00\n3. Latte | $3.50\n4. Decaf Coffee | $3.00\n5. Hot Chocolate | $4.00")
+    #Could I print the dictionary here instead of printing the menu in raw?
+    print("---Please place your order below---")
 menufunction()    
 
 
