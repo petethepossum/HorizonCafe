@@ -40,16 +40,18 @@ def orderfunction(): #15/3 changed to order function as will nest the ordering p
         print(f"{option}. {coffee['type']} | ${coffee['cost']}")
     #NEED TO HANDLE ORDER SELECTION IN HERE
     coffeeInfo = input("Please enter the number of the Coffee you would like to order ")
-    if coffeeInfo != menu.items:
+    if coffeeInfo not in menu:
         print("This is not a listed coffee please try again")
         time.sleep(3)
         exit()
-
+    else:
+        print("ok debug man")
 
     order.append({}) #How do I do this?
 orderfunction()    
 
 
+#Handle this before we show the menu as we can run order select twice
 
 ammount = input('how many coffees would you like? ')
 ammountArray.append(str(ammount))
