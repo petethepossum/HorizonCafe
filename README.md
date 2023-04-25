@@ -1,2 +1,2 @@
 # HorizonCafe
-Simple GUI POS for AS91896
+Simple POS for AS91896
