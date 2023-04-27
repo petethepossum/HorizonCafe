@@ -17,11 +17,11 @@ nameArray=[] #This still might be useful to store seperatly
 ammountArray=[] #This isn't needed can append ammount info to order info as a whole?? Maybe a for loop idk
 sugarArray=[] #This isn't needed can append sugar info to order info as a whole
 #Might need to store total order price differently??
-order =[] 
+orderArray =[] 
 
 def namefunction():
     name = input('Enter your name for the order ')
-    nameArray.append(str("Customer Name:")) #Surely there is a better way to add this to the array?
+    nameArray.append(str("Name:")) #THIS IS MESSY but helps demonstrate fstrings
     nameArray.append(str(name))
     print (name) #15/3 made it print the string not the array data giving a cleaner output
     time.sleep(1)
@@ -55,14 +55,15 @@ def orderfunction(): #15/3 changed to order function as will nest the ordering p
                 #sugarArray.append(str("Sugar:")) #Surely there is a better way to add this to the array?
                 sugarArray.append(float(Sugar))
                 #print(sugarArray)
-                order.append(sugarArray) 
+                orderArray.append(sugarArray) 
                 withSugarprint()
 
                 #set: hasSugar = True
     
         print("ok debug man")
-        order.append(nameArray)
-        order.append(coffee['type'])
+        #print(coffee['type'])
+        orderArray.append(nameArray)
+        orderArray.append(coffee['type'])
         sugarfunction()
 orderfunction()    
 
